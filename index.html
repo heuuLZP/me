@@ -1,18 +1,18 @@
+---
+layout: default
+title: 我的Blog
+---
+<h2>{{ page.title }}</h2>
+<p>最新文章</p>
+<ul>
+　　{% for post in site.posts %}
+　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　{% endfor %}
+</ul>
 <!--
 @Author: callback
 @Date:   2016-09-23T16:10:16+08:00
 @Email:  heuuLZP@gmail.com
 @Last modified by:   callback
-@Last modified time: 2016-09-23T16:10:33+08:00
+@Last modified time: 2016-09-23T16:44:24+08:00
 -->
----
-　layout: default
-　title: 我的Blog
----
-　　<h2>{{ page.title }}</h2>
-　　<p>最新文章</p>
-　　<ul>
-　　　　{% for post in site.posts %}
-　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-　　　　{% endfor %}
-　　</ul>
