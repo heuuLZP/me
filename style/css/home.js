@@ -45,8 +45,7 @@ export default StyleSheet.create({
         "paddingLeft": 0
     },
     "a": {
-        "color": "#ccc",
-        "rubytDecoration": "underline"
+        "color": "#ff9999"
     },
     "main": {
         "position": "relative",
@@ -59,8 +58,7 @@ export default StyleSheet.create({
     },
     "content": {
         "marginTop": 20,
-        "paddingLeft": 100,
-        "fontSize": 20
+        "paddingLeft": 100
     },
     "footer": {
         "position": "absolute",
@@ -74,18 +72,27 @@ export default StyleSheet.create({
         "marginBottom": 0,
         "marginLeft": 0
     },
+    "nav": {
+        "marginLeft": "50%",
+        "display": "inline-block"
+    },
     "nav ul": {
         "listStyle": "none"
     },
     "header": {
         "display": "inline-block"
     },
-    "nav": {
-        "display": "inline-block",
-        "marginLeft": "50%"
-    },
     "nav ul li": {
         "display": "inline-block",
-        "marginRight": 15
+        "marginRight": 25
+    },
+    "nav ul li a": {
+        "fontSize": 18
+    },
+    "article-list": {
+        "listStyle": "none"
+    },
+    "article-list li a": {
+        "fontSize": 22
     }
 });

@@ -3,7 +3,7 @@
 * @Date:   2016-09-23T17:28:22+08:00
 * @Email:  heuuLZP@gmail.com
 * @Last modified by:   callback
-* @Last modified time: 2016-09-23T19:10:19+08:00
+* @Last modified time: 2016-09-26T18:58:26+08:00
 */
 html,body{
   padding:0;
@@ -18,8 +18,7 @@ ul{
   padding: 0;
 }
 a{
-  color:#ccc;
-  rubyt-decoration:underline;
+  color:#ff9999;
 }
 #main{
   position:relative;
@@ -30,7 +29,6 @@ a{
 .content{
   margin-top: 20px;
   padding-left: 100px;
-  font-size: 20px;
 }
 footer{
   position: absolute;
@@ -41,6 +39,12 @@ footer{
 h1{
   margin: 0;
 }
+/*
+右上角的navbar
+ */
+nav{
+  margin-left: 50%;
+}
 nav ul{
   list-style: none;
 }
@@ -48,8 +52,14 @@ header,nav,nav ul li{
   display: inline-block;
 }
 nav ul li{
-  margin-right: 15px;
+  margin-right: 25px;
 }
-nav{
-  margin-left: 50%;
+nav ul li a{
+  font-size: 18px;
+}
+.article-list{
+  list-style: none;
+}
+.article-list li a{
+    font-size: 22px;
 }

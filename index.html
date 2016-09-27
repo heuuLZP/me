@@ -2,9 +2,11 @@
 layout: default
 title: 雾都孤儿
 ---
-<ul>
+<ul class="article-list">
 　　{% for post in site.posts %}
-　　　　<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+      <li style:"border-left:width:2px;height:24px;background-color:#ff6666;">
+          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      </li>
 　　{% endfor %}
 </ul>
 <!--
@@ -12,5 +14,5 @@ title: 雾都孤儿
 @Date:   2016-09-23T16:10:16+08:00
 @Email:  heuuLZP@gmail.com
 @Last modified by:   callback
-@Last modified time: 2016-09-25T20:59:31+08:00
+@Last modified time: 2016-09-27T10:17:34+08:00
 -->
