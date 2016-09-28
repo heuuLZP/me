@@ -3,7 +3,7 @@
 * @Date:   2016-09-23T17:28:22+08:00
 * @Email:  heuuLZP@gmail.com
 * @Last modified by:   callback
-* @Last modified time: 2016-09-26T18:58:26+08:00
+* @Last modified time: 2016-09-27T23:49:43+08:00
 */
 html,body{
   padding:0;
@@ -29,11 +29,13 @@ a{
 .content{
   margin-top: 20px;
   padding-left: 100px;
+  padding-bottom: 30px;
 }
 footer{
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 30px;
   text-align: center;
 }
 h1{

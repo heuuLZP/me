@@ -58,12 +58,14 @@ export default StyleSheet.create({
     },
     "content": {
         "marginTop": 20,
-        "paddingLeft": 100
+        "paddingLeft": 100,
+        "paddingBottom": 30
     },
     "footer": {
         "position": "absolute",
         "bottom": 0,
         "width": "100%",
+        "height": 30,
         "textAlign": "center"
     },
     "h1": {
