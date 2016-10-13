@@ -7,7 +7,7 @@ title: 分类
 @Date:   2016-09-27T23:15:57+08:00
 @Email:  heuuLZP@gmail.com
 @Last modified by:   callback
-@Last modified time: 2016-10-13T11:55:36+08:00
+@Last modified time: 2016-10-13T12:47:26+08:00
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -15,17 +15,25 @@ title: 分类
   <meta charset="UTF-8">
   <title>雾都孤儿</title>
   <style>
+    .tags{
+      padding: 100px 10% 100px 10%;
+    }
     span{
       display: inline-block;
       margin-right: 20px;
+      margin-top: 20px;
+      padding: 5px 10px 5px 10px;
       border:1px solid #efefef;
+      font-size: 24px;
     }
   </style>
 </head>
 <body>
-    <div>
+    <div class="tags">
       {% for category in site.categories %}
-        <span>{{ category | first}}</span>
+        <span>
+          {{ category | first}} {{ category | last | size }}
+        </span>
       {% endfor %}
     </div>
 </body>
