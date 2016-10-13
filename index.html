@@ -9,32 +9,41 @@ title: 雾都孤儿
       </li>
 　　{% endfor %}
 </ul>-->
+<style>
+  dl{
+    padding-left: 20px;
+  }
+  dl dd a{
+    display: inline;
 
+    color:#66cc99;
+  }
+</style>
 <!-文章分类-->
 {% for tag in site.tags %}
   <h2>{{ tag | first}}</h2>
   <dl>
     {% for post in tag.last %}
-      <dt>
-        {% assign m = post.date | date: "%-m" %}
-        {% case m %}
-          {% when '1' %}Jan
-          {% when '2' %}Feb
-          {% when '3' %}Mar
-          {% when '4' %}Apr
-          {% when '5' %}May
-          {% when '6' %}Jun
-          {% when '7' %}Jul
-          {% when '8' %}Aug
-          {% when '9' %}Sep
-          {% when '10' %}Oct
-          {% when '11' %}Nov
-          {% when '12' %}Dec
-        {% endcase %}
-        {{ post.date | date: "%-d" }}
-      </dt>
-      <dd style="margin-left:30px;">
+      <dd>
         <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+        <span>
+          {% assign m = post.date | date: "%-m" %}
+          {% case m %}
+            {% when '1' %}Jan
+            {% when '2' %}Feb
+            {% when '3' %}Mar
+            {% when '4' %}Apr
+            {% when '5' %}May
+            {% when '6' %}Jun
+            {% when '7' %}Jul
+            {% when '8' %}Aug
+            {% when '9' %}Sep
+            {% when '10' %}Oct
+            {% when '11' %}Nov
+            {% when '12' %}Dec
+          {% endcase %}
+          {{ post.date | date: "%-d" }}
+        </span>
       </dd>
     {% endfor %}
   </dl>
@@ -44,5 +53,5 @@ title: 雾都孤儿
 @Date:   2016-09-23T16:10:16+08:00
 @Email:  heuuLZP@gmail.com
 @Last modified by:   callback
-@Last modified time: 2016-09-27T23:36:26+08:00
+@Last modified time: 2016-10-13T10:15:08+08:00
 -->

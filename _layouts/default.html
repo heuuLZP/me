@@ -3,7 +3,7 @@
 @Date:   2016-09-23T16:07:02+08:00
 @Email:  heuuLZP@gmail.com
 @Last modified by:   callback
-@Last modified time: 2016-10-02T12:56:46+08:00
+@Last modified time: 2016-10-13T11:41:00+08:00
 -->
 <!DOCTYPE html>
 　　<html>
@@ -48,5 +48,18 @@
           </p>
         </footer>
       </div>
+      <script>
+        $(document).ready(function(){
+          var mh = $("body").height(),wh;
+          window.onresize = function(){
+            wh = $(window).height();
+            if (mh > wh){
+              $("footer").css({"position":"static","margin":"50px 10% 0 10%"})
+            }else{
+              $("footer").css({"position":"absolute","margin-top":"0","bottom":"15px","left":"10%"})
+            }
+          }
+        })
+      </script>
 　　</body>
 　　</html>
