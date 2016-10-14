@@ -3,15 +3,15 @@
 @Date:   2016-09-25T20:55:10+08:00
 @Email:  heuuLZP@gmail.com
 @Last modified by:   callback
-@Last modified time: 2016-10-14T12:50:18+08:00
+@Last modified time: 2016-10-14T12:56:26+08:00
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./style/bootstrap/css/bootstrap.min.css">
-  <script src="./style/bootstrap/js/jquery-1.11.1.min.js"></script>
-  <script src="./style/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../style/bootstrap/js/jquery-1.11.1.min.js"></script>
+  <script src="../style/bootstrap/js/bootstrap.min.js"></script>
   <title>{{page.title}}</title>
   <style>
     body{
@@ -32,7 +32,7 @@
       border:0;
       background-color: #d5d5d5;
     }
-    .wrap p{
+    .wrap div{
       color: #333;
       font-size: 18px;
     }
@@ -44,7 +44,10 @@
       <h3>{{ page.title}}</h3>
       <hr>
       <br>
-      <p>{{ content }}</p>
+      <div>
+        {{ content }}
+      </div>
+
     </div>
   </div>
 
