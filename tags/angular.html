@@ -7,7 +7,7 @@ title: angular
 @Date:   2016-10-13T12:38:59+08:00
 @Email:  heuuLZP@gmail.com
 @Last modified by:   callback
-@Last modified time: 2016-10-14T14:36:43+08:00
+@Last modified time: 2016-10-14T15:04:08+08:00
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@ title: angular
   <title>雾都孤儿</title>
   <style>
     .wrap{
-      margin: 50px 12.5%;
+      margin: 50px 10% 50px 10%;
     }
     .item{
       display: inline-block;
@@ -34,9 +34,8 @@ title: angular
       display: inline-block;
       width: 100%;
       overflow: hidden;
-      background: url(../img/site/number.png) no-repeat center;
     }
-    .item div a span:hover{
+    .item div a span img:hover{
       transform: scale(1.05);
       transition: transform 1s cubic-bezier(0.15, 0.95, 0.41, 0.95) 0s;
       transform-origin: 50% 50% 0px;
@@ -47,7 +46,7 @@ title: angular
       height: 100%;
     }
     .item div img{
-      visibility: hidden;
+      width: 100%;
     }
     .item h4{
       color:#46bfac;
@@ -57,9 +56,9 @@ title: angular
 </head>
 <body>
   <div class="row">
-    <div  class="wrap col-md-9">
+    <div  class="wrap col-md-10">
       {% for post in site.categories.angular %}
-      <div class="item col-xs-3 col-md-3 col-sm-3">
+      <div class="item col-xs-4 col-md-4 col-sm-4">
         <div>
           <a href="{{ post.url }}">
             <span><img src="../img/site/number.png" alt="棋子"></span>
