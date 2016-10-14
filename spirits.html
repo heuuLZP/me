@@ -1,0 +1,86 @@
+<!--
+@Author: callback
+@Date:   2016-10-13T16:43:51+08:00
+@Email:  heuuLZP@gmail.com
+@Last modified by:   callback
+@Last modified time: 2016-10-14T11:47:04+08:00
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>心情</title>
+  <style>
+    body{
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+  <!--
+@Author: callback
+@Date:   2016-10-14T15:45:15+08:00
+@Email:  heuuLZP@gmail.com
+@Last modified by:   callback
+@Last modified time: 2016-10-14T17:51:28+08:00
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>雾都孤儿</title>
+  <link rel="stylesheet" href="./style/bootstrap/css/bootstrap.min.css">
+  <script src="./style/bootstrap/js/jquery-1.11.1.min.js"></script>
+  <script src="./style/bootstrap/js/bootstrap.min.js"></script>
+  <style>
+    .wrap{
+      margin:75px 8% 50px 8%;
+    }
+    .card{
+      position: relative;
+      display: inline-block;
+      padding: 15px;
+      background-color: #fff;
+      border: 1px dotted #46bfac;
+      margin-top: 25px;
+    }
+    .card span{
+      position: absolute;
+      right: 2px;
+      bottom: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10 wrap">
+
+      </div>
+    </div>
+  </div>
+  <script>
+  var TemplateEngine = function(tpl,data){
+      var re = /<%([^%>]+)?%>/g;
+      while(match = re.exec(tpl)) {
+          console.log(match);
+          tpl = tpl.replace(match[0], data[match[1]])
+      }
+      $(".wrap").append(tpl);
+  }
+  var array =[
+    {"mood0":"从一个人生活到达两个人的日常，磕碰打闹哭啼说笑。阿甘说，life is a box of chocolate，我觉得，生活更像在玩pac-man，游戏玩家。"}
+  ];
+  (function(){
+    var template;
+    for (var i = 0; i < array.length; i++) {
+       template = '<div class="card col-xs-12 col-md-4 col-sm-4"><p>' + '<%mood'+ i +'%>'+'</p>'+'<span>💕</span>'+'</div>';
+      TemplateEngine(template,array[i]);
+    }
+  }())
+  </script>
+</body>
+</html>
+
+</body>
+</html>
