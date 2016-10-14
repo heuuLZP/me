@@ -9,6 +9,9 @@ export default StyleSheet.create({
     "body": {
         "backgroundColor": "#f9f9f9"
     },
+    "line > li": {
+        "display": "inline-block"
+    },
     "content": {
         "marginTop": 60,
         "marginRight": "10%",
