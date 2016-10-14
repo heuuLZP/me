@@ -10,21 +10,24 @@ title: 雾都孤儿
 　　{% endfor %}
 </ul>-->
 <style>
+  .year{
+    margin-bottom: 30px;
+  }
   dl{
     float: left;
     display:inline-block;
-    padding-left: 20px;
+    padding-left: 50px;
   }
   dl dd{
     position: relative;
     border-left:2px dotted #ff6666;
-    padding-left:20px;
+    padding-left:50px;
     margin-bottom: 50px;
   }
   dl dd span{
     position: absolute;
     left: -27px;
-    top: 40px;
+    top: -35px;
   }
   dl dd a{
     display: inline;
@@ -101,7 +104,7 @@ title: 雾都孤儿
 </style>
 <!-文章分类-->
 {% for tag in site.tags %}
-  <h2>{{ tag | first}}</h2>
+  <h2 class="year">{{ tag | first}}</h2>
   <dl>
     {% for post in tag.last %}
       <dd>
@@ -141,5 +144,5 @@ title: 雾都孤儿
 @Date:   2016-09-23T16:10:16+08:00
 @Email:  heuuLZP@gmail.com
 @Last modified by:   callback
-@Last modified time: 2016-10-13T18:50:02+08:00
+@Last modified time: 2016-10-14T10:54:43+08:00
 -->
