@@ -3,7 +3,7 @@
 * @Date:   2016-09-23T17:28:22+08:00
 * @Email:  heuuLZP@gmail.com
 * @Last modified by:   callback
-* @Last modified time: 2016-10-14T18:25:42+08:00
+* @Last modified time: 2016-10-17T11:20:31+08:00
 */
 body{
   background-color: #f9f9f9;
@@ -23,6 +23,7 @@ body{
   background-color: #fff;
   box-shadow: 0 0 10px 10px #efefef;
 }
+
 footer{
   left:10%;
   width: 80%;
@@ -35,4 +36,14 @@ footer{
   height: 40px;
   line-height: 40px;
   text-align: center;
+}
+@media screen and (max-width: 500px){
+  .content{
+    margin: 30px 10% 0 10%;
+    padding: 15px 10px 15px 10px;
+  }
+  footer{
+    position:static;
+    margin:30px 10% 0 10%;
+  }
 }
