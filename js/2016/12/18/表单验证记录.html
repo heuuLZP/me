@@ -1,0 +1,183 @@
+<!--
+@Author: callback
+@Date:   2016-09-25T20:55:10+08:00
+@Email:  heuuLZP@gmail.com
+@Last modified by:   callback
+@Last modified time: 2016-10-17T12:56:00+08:00
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/style/bootstrap/css/bootstrap.min.css">
+  <meta  name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <script src="/style/bootstrap/js/jquery-1.11.1.min.js"></script>
+  <script src="/style/bootstrap/js/bootstrap.min.js"></script>
+  <title>表单验证记录(一)</title>
+  <style>
+    body{
+      background-color: #f5f5f5;
+    }
+    .wrap{
+      padding: 26px;
+      margin:50px 10%;
+      background-color: #fff;
+      border:1px solid #d4d4d4;
+    }
+    .wrap > h3{
+      color: #46be98;
+      font-size: 24px;
+    }
+    .wrap hr{
+      height: 1px;
+      border:0;
+      background-color: #d5d5d5;
+    }
+    .wrap .content{
+      color: #333;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="wrap col-md-10 col-md-10 col-xs-10">
+        <h3>表单验证记录(一)</h3>
+        <hr>
+        <br>
+        <div class="content">
+          <p>最近做了一个电商网站的管理系统，设计的注册界面有20多个字段需要输入，简直恐怖。其中涉及到很多字段的验证、以及文件上传等，在此做一个总结。</p>
+
+<p><em>注:需要兼容到IE8，所以只使用了部分Html5的特性</em></p>
+
+<h3 id="section">基础验证</h3>
+<p><strong>typeof</strong> 可以判断的类型只有6种: string、number、boolean、undefined、object、function 。</p>
+
+<ul>
+  <li>
+    <p>判断 null  <br />
+<code class="highlighter-rouge">
+  Object.prototype.toString.call(null)      //返回结果  "[object Null]"
+</code></p>
+  </li>
+  <li>
+    <p>判断 array  <br />
+<code class="highlighter-rouge">
+  Object.prototype.toString.call([])   //返回结果   "[object Array]"
+</code></p>
+  </li>
+  <li>
+    <p>判断 空      <br />
+<em>input输入框的值默认是string类型。</em></p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  //默认inputValue是输入框的值，且已经去掉空格.               
+  var inputValue = "";   
+  //方法一
+  function isEmpty_1(value){      
+    if(value != ""){      
+      return true;       
+    }      
+    return false;        
+  }    
+  //方法二
+  function isEmpty_2(value){      
+    if(value.length &gt; 0){      
+      return true;       
+    }      
+    return false;        
+  }    
+  //调用方法      
+  isEmpty_1(inputValue);   
+  isEmpty_2(inputValue);    
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>原生JS的trim函数实现</p>
+
+    <p><em>虽然在项目中使用的是JQuery提供的trim函数,但是还需要涉猎一下在原生JS中是如何实现的。</em>    <br />
+<a href="http://www.cnblogs.com/rubylouvre/archive/2009/09/18/1568794.html">司徒正美 JavaScript trim函数大赏</a></p>
+  </li>
+  <li>
+    <p>即时输入   <br />
+<em>onkeydown、onkeypress、onkeyup、onchange都无法即时捕获输入框的值。</em></p>
+
+    <p>oninput是HTML5的标准事件,在输入框内容被修改时触发,主流浏览器都已经支持。</p>
+
+    <p><em>针对IE9以下版本的浏览器，通过onpropertychange事件代替。</em>  <br />
+Onpropertychange事件，在旧版IE浏览器中的事件注册模式只支持attachEvent，从IE9开始支持W3C标准的”addEventListener”事件模型。</p>
+
+    <ul>
+      <li><strong>原生JS</strong></li>
+    </ul>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  //html部分     
+  &lt;input type="text" oninput="OnInput(event)" onpropertychange="OnPropertyChange(event)" value="test"&gt;       
+  //js部分   
+  //oninput触发的函数     
+  function OnInput(event){     
+    //在这里写对应的执行语句     
+  }    
+  //onpropertychange触发的函数     
+  function OnPropertyChange(event){     
+    if (event.propertyName.toLowerCase () == "value") {     
+      //在这里写对应的执行语句    
+    }    
+  }    
+</code></pre>
+    </div>
+
+    <ul>
+      <li><strong>JQuery</strong></li>
+    </ul>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  //html部分     fax表示传真     
+  &lt;input type="text" name="fax"  value="test"&gt;     
+  //js部分     
+  $("input[name='fax']").bind('input propertychange', function() {      
+    //在这里写对应的执行语句      
+  });   
+</code></pre>
+    </div>
+
+    <p><em>oninput和onpropertychange这两个事件在IE9中,通过右键菜单中的剪切和删除命令删除内容的时候不会触发</em></p>
+
+    <p><strong>部分参考</strong>:  <br />
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/GlobalEventHandlers/oninput">MDN oninput接口</a>    <br />
+<a href="https://msdn.microsoft.com/en-us/library/ms536956(v=vs.85).aspx">Microsoft  onpropertychange</a>    <br />
+<a href="http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html">实时监听输入框值变化的完美方案：oninput &amp; onpropertychange</a>  <br />
+<a href="http://blog.csdn.net/freshlover/article/details/39050609">总结oninput、onchange与onpropertychange事件的用法和区别</a></p>
+  </li>
+  <li>
+    <p>form的属性介绍</p>
+
+    <ul>
+      <li>accept-charset  规定服务器用哪种字符串集处理表单数据。值可是是多个，用逗号隔开。</li>
+      <li>enctype         规定在发送到服务器之前应该如何对表单数据进行编码。在使用包含文件上传控件的表单时，必须使用multipart/form-data。
+HTML5新属性</li>
+      <li>autocomplete  规定是否启用表单的自动完成功能。</li>
+      <li>novalidate    提交表单时不进行验证。</li>
+    </ul>
+  </li>
+  <li>
+    <p>fieldset和legend</p>
+
+    <p>fieldset元素可将表单内的相关元素分组。浏览器会以特殊方式显示。    <br />
+legend元素为fieldset元素创建标题。</p>
+  </li>
+  <li>
+    <p>提交时的验证</p>
+
+    <p>onsubmit属性可以指定一个函数，用于判断是否提交。<code class="highlighter-rouge">onsubmit="return validate_form(this)</code>，在函数validata_form中对表单的各项输入进行验证，如果返回值为false,则不进行提交。在函数中可通过参数this获取各个表单字段的值，例如<code class="highlighter-rouge">thisform.username.value</code>。</p>
+  </li>
+</ul>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
