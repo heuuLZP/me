@@ -1,24 +1,9 @@
-<!--
-@Author: callback
-@Date:   2016-10-13T16:43:51+08:00
-@Email:  heuuLZP@gmail.com
-@Last modified by:   callback
-@Last modified time: 2016-10-17T12:43:48+08:00
--->
+---
+layout: pagelist
+title: js
+---
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta  name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <title>js</title>
-  <style>
-    body{
-      background-color: #f5f5f5;
-    }
-  </style>
-</head>
-<body>
-  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -67,23 +52,20 @@
   <div class="container-fluid">
     <div class="row">
       <div  class="wrap col-md-10">
-        
+        {% for post in site.categories.js %}
         <div class="item col-xs-12 col-md-4 col-sm-4">
           <div>
-            <a href="/js/2016/12/18/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81%E8%AE%B0%E5%BD%95.html">
+            <a href="{{ post.url }}">
               <span><img src="../img/site/number.png" alt="棋子"></span>
             </a>
           </div>
-          <h4>表单验证记录</h4>
+          <h4>{{ post.title }}</h4>
           <p>
-            工作中遇到的各式各样表单验证
+            {{ post.excerpt }}
           </p>
         </div>
-        
+        {% endfor %}
     </div>
   </div>
-</body>
-</html>
-
 </body>
 </html>
