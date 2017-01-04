@@ -96,8 +96,7 @@
   <li>
     <p>原生JS的trim函数实现</p>
 
-    <p><em>虽然在项目中使用的是JQuery提供的trim函数,但是还需要涉猎一下在原生JS中是如何实现的。</em>    <br />
-<a href="http://www.cnblogs.com/rubylouvre/archive/2009/09/18/1568794.html">司徒正美 JavaScript trim函数大赏</a></p>
+    <p><em>虽然在项目中使用的是JQuery提供的trim函数,但是还需要涉猎一下在原生JS中是如何实现的。</em>  <a href="http://www.cnblogs.com/rubylouvre/archive/2009/09/18/1568794.html">司徒正美 JavaScript trim函数大赏</a></p>
   </li>
   <li>
     <p>即时输入   <br />
@@ -142,12 +141,6 @@ Onpropertychange事件，在旧版IE浏览器中的事件注册模式只支持at
     </div>
 
     <p><em>oninput和onpropertychange这两个事件在IE9中,通过右键菜单中的剪切和删除命令删除内容的时候不会触发</em></p>
-
-    <p><strong>部分参考</strong>:  <br />
-<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/GlobalEventHandlers/oninput">MDN oninput接口</a>    <br />
-<a href="https://msdn.microsoft.com/en-us/library/ms536956(v=vs.85).aspx">Microsoft  onpropertychange</a>    <br />
-<a href="http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html">实时监听输入框值变化的完美方案：oninput &amp; onpropertychange</a>  <br />
-<a href="http://blog.csdn.net/freshlover/article/details/39050609">总结oninput、onchange与onpropertychange事件的用法和区别</a></p>
   </li>
   <li>
     <p>form的属性介绍</p>
@@ -173,6 +166,60 @@ legend元素为fieldset元素创建标题。</p>
   </li>
 </ul>
 
+<h3 id="section-1">正则表达式</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RegExp</th>
+      <th>规则</th>
+      <th>场景</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">/^[0-9]{6}$/</code></td>
+      <td>六位数字</td>
+      <td>邮政编码</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">/^\d{8,13}$/</code></td>
+      <td>8-13位数字</td>
+      <td>电话号码</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">/^\d{7,}$/</code></td>
+      <td>7位及以上数字</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">/^\d{15,20}$/</code></td>
+      <td>15-20位数字</td>
+      <td>税号</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">/^(\d{3,4}-)?\d{7,8}$/</code></td>
+      <td>区号-电话号</td>
+      <td>传真</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>邮箱</p>
+
+<p><code class="highlighter-rouge">/^([a-zA-Z0-9_\.\-])+\@([a-zA-Z0-9\-])+(\.[a-zA-Z0-9_]+)+$/</code></p>
+
+<p>域名</p>
+
+<p><code class="highlighter-rouge">/^[\u4E00-\u9FA5a-zA-Z0-9](-?[\u4E00-\u9FA5a-zA-Z0-9]){0,62}(\.[\u4E00-\u9FA5a-zA-Z0-9](-?[\u4E00-\u9FA5a-zA-Z0-9]){0,62})+$/</code></p>
+
+<p>域名可由英文字母（a-z，不区分大小写）、数字（0-9）、中文汉字以及连字符”-“（即中横线）构成，不能使用空格及特殊字符（如！、$、&amp;、?等）。“-” 不能单独注册或连续使用，不能放在开头或结尾。</p>
+
+<p><strong>部分参考</strong>:  <br />
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/GlobalEventHandlers/oninput">MDN oninput接口</a>    <br />
+<a href="https://msdn.microsoft.com/en-us/library/ms536956(v=vs.85).aspx">Microsoft  onpropertychange</a>    <br />
+<a href="http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html">实时监听输入框值变化的完美方案：oninput &amp; onpropertychange</a>  <br />
+<a href="http://blog.csdn.net/freshlover/article/details/39050609">总结oninput、onchange与onpropertychange事件的用法和区别</a></p>
 
         </div>
 
