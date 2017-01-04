@@ -272,7 +272,11 @@
       <script>
         $(document).ready(function(){
           var mh = $("body").height(),wh;
+          resize();
           window.onresize = function(){
+            resize();
+          }
+          function resize(){
             wh = $(window).height();
             if (mh > wh){
               $("footer").css({"position":"static","margin":"50px 10% 0 10%"})
